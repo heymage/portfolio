@@ -1,0 +1,37 @@
+@mixin above($width) {
+  // Value is inclusive
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin below($width) {
+  // Value is exclusive
+  @media (max-width: $width - 1) {
+    @content;
+  }
+}
+
+@mixin breakpoint($size) {
+  @if $size == sm {
+    // 500px
+    @include above(31.25rem) {
+      @content;
+    }
+  } @else if $size == md {
+    // 1024px
+    @include above(64rem) {
+      @content;
+    }
+  } @else if $size == lg {
+    // 1280px
+    @include above(80rem) {
+      @content;
+    }
+  } @else if $size == xl {
+    // 1680px
+    @include above(105rem) {
+      @content;
+    }
+  }
+}

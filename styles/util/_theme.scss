@@ -1,0 +1,29 @@
+@use '../styleguide/colors';
+
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin light {
+  @media (prefers-color-scheme: light or no-preference) {
+    @content;
+  }
+}
+
+@mixin _prop($theme, $property, $color) {
+  #{$property}: map-get($theme, $color);
+}
+
+@mixin auto($property, $color) {
+  @include light {
+    $light: map-get(colors.$themes, colors.$light);
+    @include _prop($light, $property, $color);
+  }
+
+  @include dark {
+    $dark: map-get(colors.$themes, colors.$dark);
+    @include _prop($dark, $property, $color);
+  }
+}

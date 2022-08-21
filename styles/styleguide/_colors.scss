@@ -1,0 +1,25 @@
+$dark: 'dark';
+$light: 'light';
+
+$primary: 'primary-color';
+$primary-text: 'primary-color-text';
+$background: 'background';
+$code-background: 'code-background';
+$card-border: 'card-border';
+
+$themes: (
+  $light: (
+    $primary: #0070f3,
+    $primary-text: #111,
+    $background: #fff,
+    $code-background: #eee,
+    $card-border: #ddd,
+  ),
+  $dark: (
+    $primary: #4d9fff,
+    $primary-text: #eee,
+    $background: #111,
+    $code-background: #222,
+    $card-border: #333,
+  ),
+);

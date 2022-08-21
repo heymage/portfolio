@@ -1,0 +1,30 @@
+@use 'styleguide/colors';
+@use 'styles/util/theme';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+@include theme.dark {
+  html {
+    color-scheme: dark;
+  }
+}
+
+body {
+  @include theme.auto('color', colors.$primary-text);
+  @include theme.auto('background', colors.$background);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
